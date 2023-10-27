@@ -18,9 +18,7 @@ const App = () => {
 
   const isAllCompleted = useMemo(() => {
     const isCardListForPdfDone = cardListForPdf.length !== 0;
-    return (
-      isCardListForPdfDone && projectInfo.designer && projectInfo.projectName
-    );
+    return isCardListForPdfDone && projectInfo.designer && projectInfo.projectName;
   }, [cardListForPdf, projectInfo]);
 
   return (
@@ -35,11 +33,9 @@ const App = () => {
               projectInfo={projectInfo}
             />
           ) : (
-            <FinalButtons
-              setCardListForPdf={setCardListForPdf}
-              setCardListForExcel={setCardListForExcel}
-            />
+            ""
           )}
+          <FinalButtons setCardListForPdf={setCardListForPdf} setCardListForExcel={setCardListForExcel} />
           <ProjectTitle handleProjectInfo={(info) => handleProjectInfo(info)} />
           <CardListContainer />
         </div>
